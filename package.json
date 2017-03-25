@@ -30,7 +30,7 @@
         "jsonwebtoken": "7.1.9"
     },
     "scripts": {
-        "start": "concurrently \"npn run tscwatch\" \"npm run lite\" \"npm run json\"",
+        "start": "concurrently \"npm run tscwatch\" \"npm run lite\" \"npm run json\"",
         "tsc": "tsc",
         "tscwatch": "tsc -w",
         "lite": "lite-server",
