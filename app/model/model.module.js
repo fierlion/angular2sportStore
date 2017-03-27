@@ -9,16 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var product_repository_1 = require("./product.repository");
+var static_datasource_1 = require("./static.datasource");
+var ModelModule = (function () {
+    function ModelModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: "app",
-            template: "<store></store>"
+    ModelModule = __decorate([
+        core_1.NgModule({
+            providers: [product_repository_1.ProductRepository, static_datasource_1.StaticDataSource]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ModelModule);
+    return ModelModule;
 }());
-exports.AppComponent = AppComponent;
+exports.ModelModule = ModelModule;
