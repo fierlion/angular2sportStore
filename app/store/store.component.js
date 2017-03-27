@@ -8,47 +8,58 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require("@angular/core");
-const product_repository_1 = require("../model/product.repository");
-let StoreComponent = class StoreComponent {
-    constructor(repository) {
+var core_1 = require("@angular/core");
+var product_repository_1 = require("../model/product.repository");
+var StoreComponent = (function () {
+    function StoreComponent(repository) {
         this.repository = repository;
         this.selectedCategory = null;
         this.productsPerPage = 4;
         this.selectedPage = 1;
     }
-    get products() {
-        let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
-        return this.repository.getProducts(this.selectedCategory)
-            .slice(pageIndex, pageIndex + this.productsPerPage);
-    }
-    get categories() {
-        return this.repository.getCategories();
-    }
-    changeCategory(newCategory) {
+    Object.defineProperty(StoreComponent.prototype, "products", {
+        get: function () {
+            var pageIndex = (this.selectedPage - 1) * this.productsPerPage;
+            return this.repository.getProducts(this.selectedCategory)
+                .slice(pageIndex, pageIndex + this.productsPerPage);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(StoreComponent.prototype, "categories", {
+        get: function () {
+            return this.repository.getCategories();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    StoreComponent.prototype.changeCategory = function (newCategory) {
         this.selectedCategory = newCategory;
-    }
-    changePage(newPage) {
+    };
+    StoreComponent.prototype.changePage = function (newPage) {
         this.selectedPage = newPage;
-    }
-    changePageSize(newSize) {
+    };
+    StoreComponent.prototype.changePageSize = function (newSize) {
         console.log(newSize);
         this.productsPerPage = Number(newSize);
         this.changePage(1);
-    }
-    get pageNumbers() {
-        return Array(Math.ceil(this.repository
-            .getProducts(this.selectedCategory).length /
-            this.productsPerPage))
-            .fill(0).map((x, i) => i + 1);
-    }
-};
-StoreComponent = __decorate([
-    core_1.Component({
-        selector: "store",
-        moduleId: module.id,
-        templateUrl: "store.component.html"
-    }), 
-    __metadata('design:paramtypes', [product_repository_1.ProductRepository])
-], StoreComponent);
+    };
+    Object.defineProperty(StoreComponent.prototype, "pageCount", {
+        get: function () {
+            return Math.ceil(this.repository.getProducts(this.selectedCategory).length /
+                this.productsPerPage);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    StoreComponent = __decorate([
+        core_1.Component({
+            selector: "store",
+            moduleId: module.id,
+            templateUrl: "store.component.html"
+        }), 
+        __metadata('design:paramtypes', [product_repository_1.ProductRepository])
+    ], StoreComponent);
+    return StoreComponent;
+}());
 exports.StoreComponent = StoreComponent;
