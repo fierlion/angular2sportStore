@@ -1,4 +1,5 @@
-var Builder = require("systemjs-builder");
+﻿var Builder = require("systemjs-builder");
+
 var builder = new Builder("./");
 builder.config({
     paths: {
