@@ -21,7 +21,7 @@ export class ProductRepository {
     }
 
     getProduct(id: number): Product {
-       return this.products.find(p => p.id == id);
+        return this.products.find(p => p.id == id);
     }
 
     getCategories(): string[] {

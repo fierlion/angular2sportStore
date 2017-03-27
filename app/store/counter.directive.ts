@@ -9,7 +9,7 @@ export class CounterDirective {
 
     constructor(private container: ViewContainerRef,
         private template: TemplateRef<Object>) {
-		console.log("in counter constructor")
+        console.log("in counter constructor")
     }
 
     @Input("counterOf")
