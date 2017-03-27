@@ -8,18 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var product_repository_1 = require("./product.repository");
-var static_datasource_1 = require("./static.datasource");
-var ModelModule = (function () {
-    function ModelModule() {
-    }
-    ModelModule = __decorate([
-        core_1.NgModule({
-            providers: [product_repository_1.ProductRepository, static_datasource_1.StaticDataSource]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ModelModule);
-    return ModelModule;
-}());
+const core_1 = require("@angular/core");
+const product_repository_1 = require("./product.repository");
+const static_datasource_1 = require("./static.datasource");
+let ModelModule = class ModelModule {
+};
+ModelModule = __decorate([
+    core_1.NgModule({
+        providers: [product_repository_1.ProductRepository, static_datasource_1.StaticDataSource]
+    }), 
+    __metadata('design:paramtypes', [])
+], ModelModule);
 exports.ModelModule = ModelModule;

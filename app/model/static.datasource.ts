@@ -15,8 +15,8 @@ export class StaticDataSource {
         new Product(7, "Product 7", "Category 2", "Product 7 (Category 2)", 100),
         new Product(8, "Product 8", "Category 2", "Product 8 (Category 2)", 100),
         new Product(9, "Product 9", "Category 2", "Product 9 (Category 2)", 100),
-        new Product(10, "Product 10", "Category 3", "Product 10 (Category 2)", 100),
-        new Product(11, "Product 11", "Category 3", "Product 11 (Category 2)", 100)
+        new Product(10, "Product 10", "Category 3", "Product 10 (Category 3)", 100),
+        new Product(11, "Product 11", "Category 3", "Product 11 (Category 3)", 100)
     ];
 
     getProducts(): Observable<Product[]> {
